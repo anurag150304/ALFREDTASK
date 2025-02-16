@@ -27,10 +27,10 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/flashcards', require('./routes/flashcards'));
-app.use('/api/decks', require('./routes/decks'));
-app.use('/api/achievements', require('./routes/achievements'));
+app.use('/auth', require('./routes/auth'));
+app.use('/flashcards', require('./routes/flashcards'));
+app.use('/decks', require('./routes/decks'));
+app.use('/achievements', require('./routes/achievements'));
 
 // Error handling
 app.use(errorHandler);

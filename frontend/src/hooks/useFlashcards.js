@@ -19,7 +19,7 @@ export const useFlashcards = () => {
 
         try {
             setLoading(true);
-            const response = await axios.get('/api/flashcards', {
+            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/flashcards`, {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
@@ -37,7 +37,7 @@ export const useFlashcards = () => {
 
     const fetchDueFlashcards = async () => {
         try {
-            const response = await axios.get('/api/flashcards/due', {
+            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/flashcards/due`, {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Pragma': 'no-cache'
@@ -60,7 +60,7 @@ export const useFlashcards = () => {
                 };
             }
 
-            const response = await axios.post('/api/flashcards', {
+            const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/flashcards`, {
                 question: flashcardData.question,
                 answer: flashcardData.answer,
                 deckId: flashcardData.deckId
@@ -83,7 +83,7 @@ export const useFlashcards = () => {
 
     const updateFlashcard = async (id, isCorrect) => {
         try {
-            const response = await axios.put(`/api/flashcards/${id}`, { isCorrect });
+            const response = await axios.put(`${import.meta.env.VITE_BASE_URL}/flashcards/${id}`, { isCorrect });
             setFlashcards(prev =>
                 prev.map(card => card._id === id ? response.data : card)
             );
@@ -99,7 +99,7 @@ export const useFlashcards = () => {
 
     const deleteFlashcard = async (id) => {
         try {
-            await axios.delete(`/api/flashcards/${id}`);
+            await axios.delete(`${import.meta.env.VITE_BASE_URL}/flashcards/${id}`);
             setFlashcards(prev => prev.filter(card => card._id !== id));
             setDueFlashcards(prev => prev.filter(card => card._id !== id));
             return { success: true };
@@ -113,7 +113,7 @@ export const useFlashcards = () => {
 
     const editFlashcard = async (id, { question, answer }) => {
         try {
-            const response = await axios.put(`/api/flashcards/${id}/edit`, { question, answer });
+            const response = await axios.put(`${import.meta.env.VITE_BASE_URL}/flashcards/${id}/edit`, { question, answer });
             setFlashcards(prev =>
                 prev.map(card => card._id === id ? response.data : card)
             );

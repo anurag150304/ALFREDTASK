@@ -14,8 +14,8 @@ export default function Leaderboard() {
             try {
                 setLoading(true);
                 const [leaderboardRes, achievementsRes] = await Promise.all([
-                    axios.get('/api/leaderboard'),
-                    axios.get('/api/achievements')
+                    axios.get(`${import.meta.env.VITE_BASE_URL}/leaderboard`),
+                    axios.get(`${import.meta.env.VITE_BASE_URL}/achievements`)
                 ]);
                 setLeaderboardData(leaderboardRes.data);
                 setAchievements(achievementsRes.data);

@@ -30,12 +30,12 @@ export default function Dashboard() {
     const fetchDecks = useCallback(async () => {
         try {
             setLoadingDecks(true);
-            const response = await axios.get('/api/decks');
+            const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/decks`);
             setDecks(response.data);
 
             // If there are no decks, create a default deck
             if (response.data.length === 0) {
-                const defaultDeckResponse = await axios.post('/api/decks', {
+                const defaultDeckResponse = await axios.post(`${import.meta.env.VITE_BASE_URL}/decks`, {
                     name: 'Default Deck',
                     description: 'Default deck for flashcards'
                 });
