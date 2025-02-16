@@ -36,11 +36,7 @@ app.use('/api/achievements', require('./routes/achievements'));
 app.use(errorHandler);
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/FlashMind', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000
-})
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => logger.info('Connected to MongoDB'))
     .catch(err => logger.error('MongoDB connection error:', err));
 
