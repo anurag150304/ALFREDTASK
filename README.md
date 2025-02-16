@@ -1,4 +1,4 @@
-# Leitner System Flashcard Web App
+# Recallify - A Leitner System Flashcard Web App
 
 ## Overview
 This web application allows users to create, review, and progress through flashcards using the **Leitner System**, an effective spaced repetition technique for learning. Users can track their progress and review flashcards at optimal intervals based on their mastery level.
