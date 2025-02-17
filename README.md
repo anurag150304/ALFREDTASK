@@ -51,7 +51,7 @@ This web application allows users to create, review, and progress through flashc
 | `PUT`  | `/flashcards/:id` | Update a flashcard (e.g., move to next level) |
 | `DELETE` | `/flashcards/:id` | Delete a flashcard |
 
-### **Auth API (Bonus Feature)**
+### **Auth API**
 | Method | Endpoint       | Description |
 |--------|--------------|-------------|
 | `POST` | `/auth/signup` | Register a new user |
