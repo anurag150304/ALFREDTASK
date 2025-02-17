@@ -121,12 +121,12 @@ export default function Dashboard() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex items-center">
-                            <h1 className="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">
+                            <h1 className="text-3xl font-bold text-gray-900 dark:text-[#3b82f6] cursor-pointer">
                                 Recallify
                             </h1>
                         </div>
                         <div className="flex items-center">
-                            <span className="text-gray-600 dark:text-gray-300 mr-4">
+                            <span className="text-gray-600 dark:text-gray-300 mr-9 max-[426px]:text-sm max-[426px]:mr-4 text-center">
                                 Welcome, {user.username}
                             </span>
                             <button
@@ -161,7 +161,7 @@ export default function Dashboard() {
                 <div className="px-4 py-6 sm:px-0">
                     <div className="mb-8">
                         <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white cursor-pointer">
+                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white cursor-pointer opacity-90">
                                 Due for Review: {dueFlashcards.length}
                             </h2>
                             {dueFlashcards.length > 0 && (
@@ -177,7 +177,7 @@ export default function Dashboard() {
 
                     <div className="mb-8">
                         <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white opacity-90">
                                 Your Flashcards
                             </h2>
                             <button
