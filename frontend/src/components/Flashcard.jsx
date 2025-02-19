@@ -47,7 +47,7 @@ export default function Flashcard({ card, onAnswer }) {
                     className="w-full h-full preserve-3d"
                 >
                     {/* Front of card */}
-                    <div className="absolute w-full h-full backface-hidden">
+                    <div className="absolute w-full h-full">
                         <div className="w-full h-full bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 flex flex-col justify-center items-center">
                             <h3 className="text-lg sm:text-xl font-medium text-gray-900 dark:text-white text-center">
                                 Question
@@ -62,7 +62,7 @@ export default function Flashcard({ card, onAnswer }) {
                     </div>
 
                     {/* Back of card */}
-                    <div className="absolute w-full h-full backface-hidden rotate-y-180">
+                    <div className={`absolute w-full h-full ${!isFlipped ? 'backface-hidden' : ''} rotate-y-180`}>
                         <div className="w-full h-full bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 flex flex-col justify-between">
                             <div className="flex-1 flex flex-col justify-center items-center">
                                 <h3 className="text-lg sm:text-xl font-medium text-gray-900 dark:text-white text-center">
